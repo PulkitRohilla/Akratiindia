@@ -2,16 +2,18 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "navicon1.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "navicon2.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "3D-Wall-Wood-Floor.jpg",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "navicon3.png"
     }
   ],
   "info" : {

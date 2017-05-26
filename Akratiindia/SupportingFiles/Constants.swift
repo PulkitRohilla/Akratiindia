@@ -8,6 +8,13 @@
 
 import Foundation
 
+struct StoryboardID {
+    
+    let CommonNavController = "CommonNavController"
+    let HomeScreenController = "HomeScreen"
+    let DrawerMenuController = "DrawerMenu"
+}
+
 struct HomeScreenConstants {
     
     enum CellTypes : Int {

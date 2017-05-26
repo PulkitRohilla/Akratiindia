@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02192FCA1ED848370090B751 /* LoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02192FC91ED848370090B751 /* LoginScreenController.swift */; };
+		02192FCC1ED848A60090B751 /* NavigationDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02192FCB1ED848A60090B751 /* NavigationDrawerController.swift */; };
+		02192FCE1ED848DA0090B751 /* DrawerMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02192FCD1ED848DA0090B751 /* DrawerMenuController.swift */; };
 		99A017261EC4D85D00746D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A017251EC4D85D00746D84 /* AppDelegate.swift */; };
 		99A0172B1EC4D85D00746D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A017291EC4D85D00746D84 /* Main.storyboard */; };
 		99A0172E1EC4D85D00746D84 /* Akratiindia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99A0172C1EC4D85D00746D84 /* Akratiindia.xcdatamodeld */; };
@@ -16,12 +19,14 @@
 		99B57A841EC8B10E005B846B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B57A831EC8B10E005B846B /* Constants.swift */; };
 		99B57A891EC8B3FD005B846B /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B57A881EC8B3FD005B846B /* ImageCell.swift */; };
 		99B57A8B1EC8B4D3005B846B /* SeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B57A8A1EC8B4D3005B846B /* SeparatorCell.swift */; };
-		99D487F71ED4A2EE002C2505 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 99D487F61ED4A2EE002C2505 /* Fonts */; };
 		99D487FB1ED4A817002C2505 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99D487FA1ED4A817002C2505 /* fontawesome-webfont.ttf */; };
 		99D487FC1ED4A84A002C2505 /* fontawesome-webfont.ttf in Sources */ = {isa = PBXBuildFile; fileRef = 99D487FA1ED4A817002C2505 /* fontawesome-webfont.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02192FC91ED848370090B751 /* LoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
+		02192FCB1ED848A60090B751 /* NavigationDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDrawerController.swift; sourceTree = "<group>"; };
+		02192FCD1ED848DA0090B751 /* DrawerMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuController.swift; sourceTree = "<group>"; };
 		99A017221EC4D85D00746D84 /* Akratiindia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akratiindia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A017251EC4D85D00746D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99A0172A1EC4D85D00746D84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -33,7 +38,6 @@
 		99B57A831EC8B10E005B846B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		99B57A881EC8B3FD005B846B /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		99B57A8A1EC8B4D3005B846B /* SeparatorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorCell.swift; sourceTree = "<group>"; };
-		99D487F61ED4A2EE002C2505 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = /Users/PulkitRohilla/Desktop/Akratiindia/Akratiindia/Fonts; sourceTree = "<absolute>"; };
 		99D487FA1ED4A817002C2505 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +112,10 @@
 		99B41D001EC4DDF8004F79C1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				02192FCD1ED848DA0090B751 /* DrawerMenuController.swift */,
 				99B41D031EC4DF83004F79C1 /* HomeScreenController.swift */,
+				02192FC91ED848370090B751 /* LoginScreenController.swift */,
+				02192FCB1ED848A60090B751 /* NavigationDrawerController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -209,7 +216,6 @@
 				99A017301EC4D85D00746D84 /* Assets.xcassets in Resources */,
 				99D487FB1ED4A817002C2505 /* fontawesome-webfont.ttf in Resources */,
 				99A0172B1EC4D85D00746D84 /* Main.storyboard in Resources */,
-				99D487F71ED4A2EE002C2505 /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,10 +229,13 @@
 				99D487FC1ED4A84A002C2505 /* fontawesome-webfont.ttf in Sources */,
 				99A017261EC4D85D00746D84 /* AppDelegate.swift in Sources */,
 				99A0172E1EC4D85D00746D84 /* Akratiindia.xcdatamodeld in Sources */,
+				02192FCC1ED848A60090B751 /* NavigationDrawerController.swift in Sources */,
+				02192FCA1ED848370090B751 /* LoginScreenController.swift in Sources */,
 				99B41D041EC4DF83004F79C1 /* HomeScreenController.swift in Sources */,
 				99B57A8B1EC8B4D3005B846B /* SeparatorCell.swift in Sources */,
 				99B57A841EC8B10E005B846B /* Constants.swift in Sources */,
 				99B57A891EC8B3FD005B846B /* ImageCell.swift in Sources */,
+				02192FCE1ED848DA0090B751 /* DrawerMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
