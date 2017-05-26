@@ -28,12 +28,12 @@ class LoginScreenController: UIViewController {
 
     func navigateToHomeScreen(){
         
-        let menuController  = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID().DrawerMenuController)
+        let menuController : DrawerMenuController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID().DrawerMenuController) as! DrawerMenuController
         let homeController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID().HomeScreenController)
         let homeNavController : UINavigationController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID().CommonNavController) as! UINavigationController
         homeNavController.viewControllers = [homeController!]
         
-        let navDrawerController = NavigationDrawerController.init(frontViewController: homeNavController, menuController: menuController!)
+        let navDrawerController = NavigationDrawerController.init(frontViewController: homeNavController, menuController: menuController)
         
         self.present(navDrawerController, animated: true, completion: nil)
     }

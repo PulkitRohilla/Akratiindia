@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol DrawerMenuDelegate {
+    
+    func didSelectMenuOptionAtIndex(indexPath: IndexPath)
+}
+
 class DrawerMenuController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+    
+    var delegate : DrawerMenuDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +41,7 @@ class DrawerMenuController: UIViewController , UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return 4
     }
     
     
@@ -64,6 +71,11 @@ class DrawerMenuController: UIViewController , UITableViewDelegate, UITableViewD
         {
             return 50
         }        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        delegate.didSelectMenuOptionAtIndex(indexPath: indexPath)
     }
     
 }

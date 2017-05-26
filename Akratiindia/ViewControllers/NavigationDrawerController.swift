@@ -8,14 +8,13 @@
 
 import UIKit
 
-class NavigationDrawerController: UIViewController {
+class NavigationDrawerController: UIViewController, DrawerMenuDelegate {
     
     let slideAnimationDuration = -5.0
     let cornerRadius : CGFloat = 5.0
-    let shadowCorrection : CGFloat = 2.0
     
     var frontViewController : UIViewController
-    var menuController : UIViewController
+    var menuController : DrawerMenuController
     var isDrawerOpen : Bool = false
     
     let transparentView : UIView
@@ -24,10 +23,12 @@ class NavigationDrawerController: UIViewController {
     init(frontViewController : UIViewController, menuController : UIViewController) {
         
         self.frontViewController = frontViewController
-        self.menuController = menuController
+        self.menuController = menuController as! DrawerMenuController
         self.transparentView = UIView.init(frame: frontViewController.view.frame)
         
         super.init(nibName: nil, bundle: nil)
+        
+        self.menuController.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -57,6 +58,23 @@ class NavigationDrawerController: UIViewController {
         return
     }
     
+    //Mark: - DrawerMenuDelegateMethods
+    
+    func didSelectMenuOptionAtIndex(indexPath: IndexPath) {
+
+        closeDrawer()
+        
+        switch indexPath.row {
+        case 3:
+            dismiss(animated: true, completion: nil)
+            break
+        default:
+            break
+        }
+    }
+    
+    //Mark: - OtherMethods
+    
     func initView(){
         
         self.addChildViewController(frontViewController)
@@ -70,6 +88,21 @@ class NavigationDrawerController: UIViewController {
         
         menuController.view.translatesAutoresizingMaskIntoConstraints = false
         menuController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        self.addInitialConstraints()
+        self.addGestureRecognizers()
+        
+    }
+    
+    func returnDrawerWidth() -> CGFloat{
+        
+        let screenSize = UIScreen.main.bounds
+        let drawerWidth = screenSize.width*2/3
+        
+        return drawerWidth
+    }
+    
+    func addInitialConstraints(){
         
         let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|",
                                                                  options: .alignAllLeading,
@@ -100,66 +133,28 @@ class NavigationDrawerController: UIViewController {
             constant: -returnDrawerWidth())
         
         self.view.addConstraint(leadingConstraint)
-        
-        //        UIPanGestureRecognizer *panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)];
-        //        [panRecognizer setMinimumNumberOfTouches:1];
-        //        [panRecognizer setMaximumNumberOfTouches:1];
-        //        [ViewMain addGestureRecognizer:panRecognizer];
-        
-        //        let panRecognizer = UIPanGestureRecognizer.init(target: self, action: #selector(dragDrawer(gestureRecognizer:)))
-        //        panRecognizer.maximumNumberOfTouches = 1;
-        //        panRecognizer.minimumNumberOfTouches = 1;
-        //
-        //        menuController.view.addGestureRecognizer(panRecognizer)
     }
     
-    func dragDrawer(gestureRecognizer : UIPanGestureRecognizer){
+    func addGestureRecognizers(){
         
-        var translatedPoint : CGPoint = gestureRecognizer.translation(in: gestureRecognizer.view?.superview)
-        var firstX : CGFloat = 0.0
+        let leftSwipeGesture = UISwipeGestureRecognizer.init(target: self, action: #selector(closeDrawer))
+        leftSwipeGesture.direction = .left
+        leftSwipeGesture.numberOfTouchesRequired = 1
         
-        if gestureRecognizer.state == .began {
-            
-            firstX = (gestureRecognizer.view?.center.x)!
-        }
+        menuController.view.addGestureRecognizer(leftSwipeGesture)
         
-        translatedPoint = CGPoint(x: (gestureRecognizer.view?.center.x)! + translatedPoint.x, y: (gestureRecognizer.view?.center.y)!)
+        let rightSwipeScreenEdgeGesture = UIScreenEdgePanGestureRecognizer.init(target: self, action: #selector(screenEdgePan(sender:)))
+        rightSwipeScreenEdgeGesture.edges = [.left]
         
-        gestureRecognizer.view?.center = translatedPoint
-        gestureRecognizer.setTranslation(.zero, in: gestureRecognizer.view)
-        
-        if gestureRecognizer.state == .ended {
-            
-            let velocityX = (0.2*gestureRecognizer.velocity(in: self.view).x)
-            
-            var finalX = translatedPoint.x + velocityX
-            
-            if finalX < 0 {
-                
-                finalX = 0
-            }
-            else if finalX > returnDrawerWidth()
-            {
-                finalX = returnDrawerWidth()
-            }
-            
-            if finalX > firstX {
-                
-                openDrawer()
-            }
-            else
-            {
-                closeDrawer()
-            }
-        }
+        self.view.addGestureRecognizer(rightSwipeScreenEdgeGesture)
     }
     
-    func returnDrawerWidth() -> CGFloat{
+    func screenEdgePan(sender: UIScreenEdgePanGestureRecognizer){
         
-        let screenSize = UIScreen.main.bounds
-        let drawerWidth = screenSize.width*2/3
-        
-        return drawerWidth
+        if sender.state == .began {
+            
+            openDrawer()
+        }
     }
     
     func toggleDrawer(){
