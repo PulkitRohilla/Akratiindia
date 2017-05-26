@@ -61,11 +61,22 @@ class HomeScreenController: UITableViewController {
         return cell
     }
 
-    //OtherMethods
+    //MARK: - OtherMethods
     func initScreen(){
         
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        setupNavigationBar()
+    }
+    
+    func setupNavigationBar(){
+        
+        let barBtnNavigation : UIBarButtonItem = UIBarButtonItem.init(image: #imageLiteral(resourceName: "navIcon"), style: .plain, target: navigationDrawerController(), action: Selector(("toggleDrawer")))
+        barBtnNavigation.tintColor = UIColor.white
+        
+        self.navigationItem.leftBarButtonItem = barBtnNavigation
+        self.navigationItem.title = "Navigation Drawer"
     }
 
 }
