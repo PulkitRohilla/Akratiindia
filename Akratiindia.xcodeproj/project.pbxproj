@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		02192FCA1ED848370090B751 /* LoginScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02192FC91ED848370090B751 /* LoginScreenController.swift */; };
-		02192FCC1ED848A60090B751 /* NavigationDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02192FCB1ED848A60090B751 /* NavigationDrawerController.swift */; };
-		02192FCE1ED848DA0090B751 /* DrawerMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02192FCD1ED848DA0090B751 /* DrawerMenuController.swift */; };
+		9927FC241ED9451500CA8BA9 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927FC231ED9451500CA8BA9 /* RequestBuilder.swift */; };
+		9927FC261EDA9E8400CA8BA9 /* CategoryScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927FC251EDA9E8400CA8BA9 /* CategoryScreenController.swift */; };
+		9927FC281EDAA2A600CA8BA9 /* CategorySectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927FC271EDAA2A600CA8BA9 /* CategorySectionHeader.swift */; };
 		99A017261EC4D85D00746D84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A017251EC4D85D00746D84 /* AppDelegate.swift */; };
 		99A0172B1EC4D85D00746D84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99A017291EC4D85D00746D84 /* Main.storyboard */; };
 		99A0172E1EC4D85D00746D84 /* Akratiindia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99A0172C1EC4D85D00746D84 /* Akratiindia.xcdatamodeld */; };
@@ -25,8 +26,9 @@
 
 /* Begin PBXFileReference section */
 		02192FC91ED848370090B751 /* LoginScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenController.swift; sourceTree = "<group>"; };
-		02192FCB1ED848A60090B751 /* NavigationDrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationDrawerController.swift; sourceTree = "<group>"; };
-		02192FCD1ED848DA0090B751 /* DrawerMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerMenuController.swift; sourceTree = "<group>"; };
+		9927FC231ED9451500CA8BA9 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		9927FC251EDA9E8400CA8BA9 /* CategoryScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryScreenController.swift; sourceTree = "<group>"; };
+		9927FC271EDAA2A600CA8BA9 /* CategorySectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySectionHeader.swift; sourceTree = "<group>"; };
 		99A017221EC4D85D00746D84 /* Akratiindia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akratiindia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A017251EC4D85D00746D84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99A0172A1EC4D85D00746D84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,10 +73,11 @@
 		99A017241EC4D85D00746D84 /* Akratiindia */ = {
 			isa = PBXGroup;
 			children = (
-				99D487F91ED4A7FC002C2505 /* Fonts */,
 				99B41D011EC4DE3F004F79C1 /* AppDelegate */,
 				99B41D021EC4DED3004F79C1 /* Database */,
+				99D487F91ED4A7FC002C2505 /* Fonts */,
 				99B41CFF1EC4DDA5004F79C1 /* Images */,
+				99D487FD1ED8A40D002C2505 /* ServerInterface */,
 				99A0173C1EC4DA1B00746D84 /* Storyboard */,
 				99A0173B1EC4D8BE00746D84 /* SupportingFiles */,
 				99B41D001EC4DDF8004F79C1 /* ViewControllers */,
@@ -112,10 +115,9 @@
 		99B41D001EC4DDF8004F79C1 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				02192FCD1ED848DA0090B751 /* DrawerMenuController.swift */,
+				9927FC251EDA9E8400CA8BA9 /* CategoryScreenController.swift */,
 				99B41D031EC4DF83004F79C1 /* HomeScreenController.swift */,
 				02192FC91ED848370090B751 /* LoginScreenController.swift */,
-				02192FCB1ED848A60090B751 /* NavigationDrawerController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -139,6 +141,7 @@
 		99B57A871EC8B3C4005B846B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9927FC271EDAA2A600CA8BA9 /* CategorySectionHeader.swift */,
 				99B57A881EC8B3FD005B846B /* ImageCell.swift */,
 				99B57A8A1EC8B4D3005B846B /* SeparatorCell.swift */,
 			);
@@ -151,6 +154,14 @@
 				99D487FA1ED4A817002C2505 /* fontawesome-webfont.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		99D487FD1ED8A40D002C2505 /* ServerInterface */ = {
+			isa = PBXGroup;
+			children = (
+				9927FC231ED9451500CA8BA9 /* RequestBuilder.swift */,
+			);
+			path = ServerInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,13 +240,14 @@
 				99D487FC1ED4A84A002C2505 /* fontawesome-webfont.ttf in Sources */,
 				99A017261EC4D85D00746D84 /* AppDelegate.swift in Sources */,
 				99A0172E1EC4D85D00746D84 /* Akratiindia.xcdatamodeld in Sources */,
-				02192FCC1ED848A60090B751 /* NavigationDrawerController.swift in Sources */,
+				9927FC241ED9451500CA8BA9 /* RequestBuilder.swift in Sources */,
 				02192FCA1ED848370090B751 /* LoginScreenController.swift in Sources */,
+				9927FC261EDA9E8400CA8BA9 /* CategoryScreenController.swift in Sources */,
 				99B41D041EC4DF83004F79C1 /* HomeScreenController.swift in Sources */,
+				9927FC281EDAA2A600CA8BA9 /* CategorySectionHeader.swift in Sources */,
 				99B57A8B1EC8B4D3005B846B /* SeparatorCell.swift in Sources */,
 				99B57A841EC8B10E005B846B /* Constants.swift in Sources */,
 				99B57A891EC8B3FD005B846B /* ImageCell.swift in Sources */,
-				02192FCE1ED848DA0090B751 /* DrawerMenuController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

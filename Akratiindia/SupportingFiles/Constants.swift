@@ -8,11 +8,15 @@
 
 import Foundation
 
-struct StoryboardID {
+struct WebserviceURL{
     
-    let CommonNavController = "CommonNavController"
-    let HomeScreenController = "HomeScreen"
-    let DrawerMenuController = "DrawerMenu"
+    let LoginWebservice = "/api/Clients/login"
+}
+
+struct SegueIdentifier {
+    
+    let SILogin = "SILogin"
+    
 }
 
 struct HomeScreenConstants {
@@ -28,3 +32,12 @@ struct HomeScreenConstants {
 }
 
 
+struct CategoryScreenConstants{
+    
+    let CategoryCellIdentifier = "categoryCellIdentifier"
+}
+
+struct FontAwesomeIcons{
+    
+    let iconDownArrow = ""
+}

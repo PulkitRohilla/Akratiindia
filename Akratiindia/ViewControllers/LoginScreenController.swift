@@ -22,19 +22,8 @@ class LoginScreenController: UIViewController {
     }
     
     @IBAction func actionLogin(_ sender: UIButton) {
-        
-        navigateToHomeScreen()
+    
+        performSegue(withIdentifier: SegueIdentifier().SILogin, sender: self)
     }
 
-    func navigateToHomeScreen(){
-        
-        let menuController : DrawerMenuController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID().DrawerMenuController) as! DrawerMenuController
-        let homeController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID().HomeScreenController)
-        let homeNavController : UINavigationController = self.storyboard?.instantiateViewController(withIdentifier: StoryboardID().CommonNavController) as! UINavigationController
-        homeNavController.viewControllers = [homeController!]
-        
-        let navDrawerController = NavigationDrawerController.init(frontViewController: homeNavController, menuController: menuController)
-        
-        self.present(navDrawerController, animated: true, completion: nil)
-    }
 }
