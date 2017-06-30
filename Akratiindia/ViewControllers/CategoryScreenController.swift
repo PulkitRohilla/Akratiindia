@@ -8,19 +8,16 @@
 
 import UIKit
 
-class CategoryScreenController: UITableViewController {
+class CategoryScreenController: UITableViewController, CategorySectionHeaderDelegate {
 
-    var arrayCategories : NSArray = ["Door Fitting", "Cupboard Fitting", "Glass Fitting", "Furniture"]
-    var arraySubCategories : NSArray = ["One", "Two", "Three"]
-    
+    var arrayCategories : NSArray!
+    var selectedIndex : Int = -1
+    var prevSelectedIndex : Int = -1
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        initObjects()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,23 +29,30 @@ class CategoryScreenController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
 
-        return arrayCategories.count
+        return (arrayCategories != nil) ? arrayCategories.count : 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
+        if selectedIndex > -1 && selectedIndex < arrayCategories.count && section == selectedIndex{
+            
+            let category = arrayCategories.object(at: section) as! CategoryClass
+            return category.arrayProducts.count
+        }
+        
         return 0
     }
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
-        return 50.0
+        return 44.0
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
-        let title = arrayCategories.object(at: section) as? String
-        let headerView = CategorySectionHeader.init(sectionHeaderForCategory: title!)
+        let category = arrayCategories.object(at: section) as? CategoryClass
+        let title = category?.categoryName
+        let headerView = CategorySectionHeader.init(headerForSection: section, withTitle: title!, andDelegate: self as CategorySectionHeaderDelegate)
         
         return headerView
     }
@@ -57,55 +61,49 @@ class CategoryScreenController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryScreenConstants().CategoryCellIdentifier, for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = arraySubCategories.object(at: indexPath.row) as? String
+        let category = arrayCategories.object(at: indexPath.section) as? CategoryClass
+        let product = category?.arrayProducts.object(at: indexPath.row) as? ProductClass
+
+        cell.textLabel?.text = product?.productName
         
         return cell
     }
     
+    // MARK: - CategorySectionHeaderDelegate
+    
+    func didSelectHeaderForSection(section: Int) {
+        
+        if selectedIndex != section {
+            
+            selectedIndex = section
+        }
+        else
+        {
+            selectedIndex = -1
+        }
+        
+        var sectionIndexes = IndexSet.init(integer: section)
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+        if prevSelectedIndex != -1 {
+            
+            sectionIndexes.insert(prevSelectedIndex)
+        }
+    
+        tableView.reloadSections(sectionIndexes, with: UITableViewRowAnimation.automatic)
+
+        prevSelectedIndex = selectedIndex
+
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    // MARK: - OtherMethods
+    func initObjects(){
+        
+        retrieveCategoryListing()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    func retrieveCategoryListing(){
+        
+        arrayCategories = CategoryParser.returnParsedCategories()
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

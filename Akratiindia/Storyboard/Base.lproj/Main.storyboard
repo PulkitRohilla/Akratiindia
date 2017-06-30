@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Oet-yP-SLW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Oet-yP-SLW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,7 +18,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Akratiindia-->
+        <!--CMiC-->
         <scene sceneID="TaB-hv-wZE">
             <objects>
                 <tableViewController storyboardIdentifier="HomeScreen" id="FYW-SG-uDK" customClass="HomeScreenController" customModule="Akratiindia" customModuleProvider="target" sceneMemberID="viewController">
@@ -103,7 +103,7 @@
                             <outlet property="delegate" destination="FYW-SG-uDK" id="mmn-P2-LIg"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Akratiindia" id="kKA-Vp-ZlO"/>
+                    <navigationItem key="navigationItem" title="CMiC" id="kKA-Vp-ZlO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U3G-4y-74d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -122,14 +122,14 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1rE-yb-pze" id="0GN-il-TTY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sEw-do-0qR">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -155,7 +155,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="YvP-Ro-b9i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.220583424" green="0.50120282169999997" blue="0.69810509679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.70617824789999994" green="0.0002946395252" blue="0.12767171860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="38R-l8-Wud" kind="relationship" relationship="rootViewController" id="M6o-yO-09n"/>
@@ -297,8 +297,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.70617824789999994" green="0.0002946395252" blue="0.12767171860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" red="0.220583424" green="0.50120282169999997" blue="0.69810509679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="6PC-2c-7Sq" kind="relationship" relationship="viewControllers" id="qYH-Kz-A7i"/>
@@ -322,7 +322,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.220583424" green="0.50120282169999997" blue="0.69810509679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.70617824789999994" green="0.0002946395252" blue="0.12767171860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -346,7 +346,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0jb-MF-bYY" id="Joh-5F-BkI">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -370,7 +370,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="AOC-WE-hMl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.220583424" green="0.50120282169999997" blue="0.69810509679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.70617824789999994" green="0.0002946395252" blue="0.12767171860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="RvS-pd-7XR" kind="relationship" relationship="rootViewController" id="GeU-eN-e6W"/>
@@ -393,7 +393,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MQ2-8b-Pjg" id="0Xg-uz-09S">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -414,10 +414,10 @@
             <objects>
                 <navigationController id="JHs-NO-kvI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" tag="3" title="Notifications" image="notifications" id="zh6-Jg-ZDt"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="o2L-Jb-TxZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="o2L-Jb-TxZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.220583424" green="0.50120282169999997" blue="0.69810509679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.70617824789999994" green="0.0002946395252" blue="0.12767171860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="xBx-Ve-x9P" kind="relationship" relationship="rootViewController" id="SQU-4E-G6k"/>
@@ -440,7 +440,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OdL-cz-UsB" id="rwl-ih-AAL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -461,10 +461,10 @@
             <objects>
                 <navigationController id="Y2F-kd-HTH" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Cart" image="cart" id="VxK-iD-1VR"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="GfG-SU-tGI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="GfG-SU-tGI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.220583424" green="0.50120282169999997" blue="0.69810509679999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.70617824789999994" green="0.0002946395252" blue="0.12767171860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="gky-Ag-CW5" kind="relationship" relationship="rootViewController" id="UMN-dl-4M6"/>
