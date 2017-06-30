@@ -14,6 +14,8 @@ class CategoryScreenController: UITableViewController, CategorySectionHeaderDele
     var selectedIndex : Int = -1
     var prevSelectedIndex : Int = -1
 
+    var selectedProduct : ProductClass!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,16 @@ class CategoryScreenController: UITableViewController, CategorySectionHeaderDele
         // Dispose of any resources that can be recreated.
     }
 
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    
+        if segue.identifier == SegueIdentifier().SIProducts {
+            
+            (segue.destination as! ProductsScreenController).selectedProduct = selectedProduct
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -67,6 +79,19 @@ class CategoryScreenController: UITableViewController, CategorySectionHeaderDele
         cell.textLabel?.text = product?.productName
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        return 0.1
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let category = arrayCategories.object(at: indexPath.section) as? CategoryClass
+        selectedProduct = category?.arrayProducts.object(at: indexPath.row) as? ProductClass
+        
+        self.performSegue(withIdentifier: SegueIdentifier().SIProducts, sender: self)
     }
     
     // MARK: - CategorySectionHeaderDelegate

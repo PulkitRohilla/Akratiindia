@@ -109,6 +109,40 @@
             </objects>
             <point key="canvasLocation" x="78" y="-1341"/>
         </scene>
+        <!--Products Screen Controller-->
+        <scene sceneID="ig7-sl-alI">
+            <objects>
+                <collectionViewController id="VIJ-rh-SuX" customClass="ProductsScreenController" customModule="Akratiindia" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="Dep-6m-9F4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ogd-rr-hKI">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vwu-c1-iN6">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="VIJ-rh-SuX" id="Tk8-vz-Jvr"/>
+                            <outlet property="delegate" destination="VIJ-rh-SuX" id="FUX-AI-Gqv"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jx9-hP-VnA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="-656"/>
+        </scene>
         <!--Categories-->
         <scene sceneID="fdS-P4-ZwO">
             <objects>
@@ -141,7 +175,12 @@
                             <outlet property="delegate" destination="38R-l8-Wud" id="wCW-uH-PCQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Categories" id="Yge-sU-lGn"/>
+                    <navigationItem key="navigationItem" title="Categories" id="Yge-sU-lGn">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Bdb-EC-zaW"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="VIJ-rh-SuX" kind="show" identifier="SIProducts" id="E49-5v-Rj0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GvU-D5-oaY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -484,4 +523,5 @@
         <image name="notifications" width="25" height="25"/>
         <image name="profile" width="25" height="25"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

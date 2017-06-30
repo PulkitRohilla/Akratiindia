@@ -12,6 +12,7 @@
 		027532D61F062E1700DF4C9A /* CategoryParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027532D51F062E1700DF4C9A /* CategoryParser.swift */; };
 		027532D81F062E2B00DF4C9A /* CategoryListing.json in Resources */ = {isa = PBXBuildFile; fileRef = 027532D71F062E2B00DF4C9A /* CategoryListing.json */; };
 		027532DA1F062E7B00DF4C9A /* CategoryClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027532D91F062E7B00DF4C9A /* CategoryClass.swift */; };
+		027532DC1F06626D00DF4C9A /* ProductsScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027532DB1F06626D00DF4C9A /* ProductsScreenController.swift */; };
 		9927FC241ED9451500CA8BA9 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927FC231ED9451500CA8BA9 /* RequestBuilder.swift */; };
 		9927FC261EDA9E8400CA8BA9 /* CategoryScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927FC251EDA9E8400CA8BA9 /* CategoryScreenController.swift */; };
 		9927FC281EDAA2A600CA8BA9 /* CategorySectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927FC271EDAA2A600CA8BA9 /* CategorySectionHeader.swift */; };
@@ -34,6 +35,7 @@
 		027532D51F062E1700DF4C9A /* CategoryParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryParser.swift; sourceTree = "<group>"; };
 		027532D71F062E2B00DF4C9A /* CategoryListing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoryListing.json; sourceTree = "<group>"; };
 		027532D91F062E7B00DF4C9A /* CategoryClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryClass.swift; sourceTree = "<group>"; };
+		027532DB1F06626D00DF4C9A /* ProductsScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsScreenController.swift; sourceTree = "<group>"; };
 		9927FC231ED9451500CA8BA9 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		9927FC251EDA9E8400CA8BA9 /* CategoryScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryScreenController.swift; sourceTree = "<group>"; };
 		9927FC271EDAA2A600CA8BA9 /* CategorySectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategorySectionHeader.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				9927FC251EDA9E8400CA8BA9 /* CategoryScreenController.swift */,
 				99B41D031EC4DF83004F79C1 /* HomeScreenController.swift */,
 				02192FC91ED848370090B751 /* LoginScreenController.swift */,
+				027532DB1F06626D00DF4C9A /* ProductsScreenController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				99A0172E1EC4D85D00746D84 /* Akratiindia.xcdatamodeld in Sources */,
 				027532D61F062E1700DF4C9A /* CategoryParser.swift in Sources */,
 				9927FC241ED9451500CA8BA9 /* RequestBuilder.swift in Sources */,
+				027532DC1F06626D00DF4C9A /* ProductsScreenController.swift in Sources */,
 				02192FCA1ED848370090B751 /* LoginScreenController.swift in Sources */,
 				027532DA1F062E7B00DF4C9A /* CategoryClass.swift in Sources */,
 				9927FC261EDA9E8400CA8BA9 /* CategoryScreenController.swift in Sources */,
