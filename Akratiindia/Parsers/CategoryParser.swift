@@ -26,25 +26,25 @@ class CategoryParser: NSObject {
                         for category in arrayCategories {
                             
                             let categoryName = category["Category"] as! String
-                            let products = category["Products"] as! [[String:Any]]
+                            let subCategories = category["SubCategories"] as! [[String:Any]]
                             
-                            var mArrayProducts : NSMutableArray!
+                            var mArraySubCategories : NSMutableArray!
                             
-                            for product in products {
+                            for subCategory in subCategories {
                                 
-                                let productName = product["name"] as! String
+                                let subCategoryName = subCategory["name"] as! String
                                 
-                                let product : ProductClass = ProductClass.init(withProductName: productName, andCategory: categoryName)
+                                let subCategory : SubCategoryClass = SubCategoryClass.init(withSubCategoryName: subCategoryName, andSubCategoryCategory: categoryName)
                                 
-                                if (mArrayProducts == nil) {
+                                if (mArraySubCategories == nil) {
                                     
-                                    mArrayProducts = NSMutableArray()
+                                    mArraySubCategories = NSMutableArray()
                                 }
 
-                                mArrayProducts.add(product)
+                                mArraySubCategories.add(subCategory)
                             }
                             
-                            let categoryObj : CategoryClass = CategoryClass.init(withCategoryName: categoryName, andProducts: mArrayProducts)
+                            let categoryObj : CategoryClass = CategoryClass.init(withCategoryName: categoryName, andSubCategorieds: mArraySubCategories)
 
                             if (mArrayCategories == nil) {
                                 

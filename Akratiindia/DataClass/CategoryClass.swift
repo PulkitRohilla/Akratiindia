@@ -11,14 +11,14 @@ import UIKit
 class CategoryClass: NSObject {
 
     var categoryName : String!
-    var arrayProducts : NSArray!
+    var arraySubCategories : NSArray!
     
-    init(withCategoryName name : String,andProducts products : NSArray) {
+    init(withCategoryName name : String,andSubCategorieds subCategories : NSArray) {
         
         super.init()
         
         categoryName = name
-        arrayProducts = products
+        arraySubCategories = subCategories
         
     }
 }

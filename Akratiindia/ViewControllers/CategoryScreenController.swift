@@ -14,7 +14,7 @@ class CategoryScreenController: UITableViewController, CategorySectionHeaderDele
     var selectedIndex : Int = -1
     var prevSelectedIndex : Int = -1
 
-    var selectedProduct : ProductClass!
+    var selectedSubCategory : SubCategoryClass!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class CategoryScreenController: UITableViewController, CategorySectionHeaderDele
     
         if segue.identifier == SegueIdentifier().SIProducts {
             
-            (segue.destination as! ProductsScreenController).selectedProduct = selectedProduct
+            (segue.destination as! ProductsScreenController).selectedSubCategory = selectedSubCategory
         }
     }
     
@@ -49,7 +49,7 @@ class CategoryScreenController: UITableViewController, CategorySectionHeaderDele
         if selectedIndex > -1 && selectedIndex < arrayCategories.count && section == selectedIndex{
             
             let category = arrayCategories.object(at: section) as! CategoryClass
-            return category.arrayProducts.count
+            return category.arraySubCategories.count
         }
         
         return 0
@@ -74,9 +74,9 @@ class CategoryScreenController: UITableViewController, CategorySectionHeaderDele
 
         // Configure the cell...
         let category = arrayCategories.object(at: indexPath.section) as? CategoryClass
-        let product = category?.arrayProducts.object(at: indexPath.row) as? ProductClass
+        let subCategory = category?.arraySubCategories.object(at: indexPath.row) as? SubCategoryClass
 
-        cell.textLabel?.text = product?.productName
+        cell.textLabel?.text = subCategory?.subCategoryName
         
         return cell
     }
@@ -89,7 +89,7 @@ class CategoryScreenController: UITableViewController, CategorySectionHeaderDele
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let category = arrayCategories.object(at: indexPath.section) as? CategoryClass
-        selectedProduct = category?.arrayProducts.object(at: indexPath.row) as? ProductClass
+        selectedSubCategory = category?.arraySubCategories.object(at: indexPath.row) as? SubCategoryClass
         
         self.performSegue(withIdentifier: SegueIdentifier().SIProducts, sender: self)
     }
