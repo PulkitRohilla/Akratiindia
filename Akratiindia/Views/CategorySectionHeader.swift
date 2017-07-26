@@ -8,43 +8,97 @@
 
 import UIKit
 
+protocol CategorySectionHeaderDelegate {
+    
+    func didSelectHeaderForSection(section : Int)
+}
+
 class CategorySectionHeader: UIView {
 
     let defaultViewSpacing = 15.0
+    let borderHeight = 0.5
+
+    var section = -1
     
-    init(sectionHeaderForCategory title: String) {
+    // MARK:- Delegate
+    var sectionDelegate: CategorySectionHeaderDelegate?
+    
+    init(headerForSection index: Int,withTitle title: String, andDelegate delegate: CategorySectionHeaderDelegate) {
         
         super.init(frame: .zero)
+        
+        section = index;
+        sectionDelegate = delegate;
+        
         self.backgroundColor = UIColor.white
         
-        let lableTitle = UILabel.init()
-        let buttonToggle = UIButton.init(type: .custom)
-        
-        lableTitle.text = title
-    
-        buttonToggle.setTitle(FontAwesomeIcons().iconDownArrow, for: UIControlState.normal)
-        buttonToggle.setTitleColor(UIColor.lightGray, for: UIControlState.normal)
-        buttonToggle.titleLabel?.font = UIFont(name: "fontawesome", size: 20.0)
-        
-        self.addSubview(lableTitle)
-        self.addSubview(buttonToggle)
-        
-        lableTitle.translatesAutoresizingMaskIntoConstraints = false
-        buttonToggle.translatesAutoresizingMaskIntoConstraints = false
-        
-        let subviewsDict = ["lableTitle" : lableTitle,
-                            "buttonToggle" : buttonToggle]
-        let metricsDict = ["defaultViewSpacing" : defaultViewSpacing]
-        
-        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(defaultViewSpacing)-[lableTitle]-[buttonToggle]-(defaultViewSpacing)-|", options: NSLayoutFormatOptions.alignAllCenterY, metrics: metricsDict, views: subviewsDict)
-        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[lableTitle]-0-|", options: NSLayoutFormatOptions.alignAllCenterY, metrics: nil, views: subviewsDict)
+        let tapGesture = UITapGestureRecognizer.init(target: self, action: #selector(didTapHeader))
 
+        let labelTitle = UILabel.init()
+        let labelIcon = UILabel.init()
+        let bottomBorder = UIView.init()
+
+        labelTitle.text = title
+        labelTitle.font = UIFont.systemFont(ofSize: 20.0, weight: 0.2)
+        
+        labelIcon.text = FontAwesomeIcons().iconDownArrow
+        labelIcon.font = UIFont(name: "fontawesome", size: 20.0)
+        labelIcon.textColor = UIColor.gray
+        
+        bottomBorder.backgroundColor = UIColor.lightGray
+        
+        self.addSubview(labelTitle)
+        self.addSubview(labelIcon)
+        self.addSubview(bottomBorder)
+
+        labelTitle.translatesAutoresizingMaskIntoConstraints = false
+        labelIcon.translatesAutoresizingMaskIntoConstraints = false
+        bottomBorder.translatesAutoresizingMaskIntoConstraints = false
+
+        let subviewsDict = ["lableTitle" : labelTitle,
+                            "labelIcon" : labelIcon,
+                            "bottomBorder" : bottomBorder]
+        
+        let metricsDict = ["defaultViewSpacing" : defaultViewSpacing,
+                           "borderHeight": borderHeight]
+        
+        let centreTitleConstraint = NSLayoutConstraint.init(item: self,
+                                                            attribute: .centerY,
+                                                            relatedBy: .equal,
+                                                            toItem: labelTitle,
+                                                            attribute: .centerY,
+                                                            multiplier: 1.0,
+                                                            constant: 0)
+        
+        let horizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(defaultViewSpacing)-[lableTitle]-[labelIcon]-(defaultViewSpacing)-|",
+                                                                   options: NSLayoutFormatOptions.alignAllCenterY,
+                                                                   metrics: metricsDict,
+                                                                   views: subviewsDict)
+        
+        let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:[bottomBorder(borderHeight)]-0-|",
+                                                                 options: NSLayoutFormatOptions.init(rawValue: 0),
+                                                                 metrics: metricsDict,
+                                                                 views: subviewsDict)
+        
+        let borderhorizontalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "H:|-(defaultViewSpacing)-[bottomBorder]-0-|",
+                                                                         options: NSLayoutFormatOptions.init(rawValue: 0),
+                                                                         metrics: metricsDict,
+                                                                         views: subviewsDict)
+
+        self.addConstraint(centreTitleConstraint)
         self.addConstraints(horizontalConstraints)
         self.addConstraints(verticalConstraints)
+        self.addConstraints(borderhorizontalConstraints)
         
+        self.addGestureRecognizer(tapGesture)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func didTapHeader(){
+        
+        sectionDelegate?.didSelectHeaderForSection(section: section)
     }
 }

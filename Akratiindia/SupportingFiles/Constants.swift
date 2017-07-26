@@ -16,7 +16,7 @@ struct WebserviceURL{
 struct SegueIdentifier {
     
     let SILogin = "SILogin"
-    
+    let SIProducts = "SIProducts"
 }
 
 struct HomeScreenConstants {
